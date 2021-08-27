@@ -20,11 +20,11 @@ var sign_out = document.querySelector("#signOut");
 // check if user is logged in or not
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-        if(window.location.pathname != '/home.html'){
-            window.location = 'home.html';
+        if(window.location.pathname != '/Upload-Design.html'){
+            window.location = 'Upload-Design.html';
         }
     } else {
-        if(window.location.pathname === '/home.html'){
+        if(window.location.pathname === '/Upload-Design.html'){
             window.location = 'index-2.html';
         }
     }
@@ -39,7 +39,7 @@ if(form){
     
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
-            window.location = 'home.html';
+            window.location = 'Upload-Design.html';
         })
         .catch((error) => {
             message.style.display = 'block';
@@ -60,7 +60,7 @@ if(r_form){
     
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
-            window.location = 'home.html';
+            window.location = 'Upload-Design.html';
         })
         .catch((error) => {
             message.style.display = 'block';
