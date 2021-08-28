@@ -142,10 +142,15 @@
             <div id="appbar">
                 <img src="logo.png" width="256px;">
             </div>
+            <div class="block">
+                <h3 align="center" class="nicefont">Langkah-Langkah</h3>
+                <p>1. Isi Data-Data Di Atas Dengan Benar</p>
+                <p>1. Isi Data-Data Di Atas Dengan Benar</p>
+            </div>
             
             <div class="page order">
                 <div class="block">
-                    <h3 align="center" class="nicefont">Payment</h3>
+                    <h3 align="center" class="nicefont">Upload Design</h3>
                     <p>Order Number</p>
                     <input id="ordernumber" value=123456 readonly>
                     <p>Date</p>
@@ -154,29 +159,27 @@
                     <input id="ordername">
                     <p>Email</p>
                     <input type="email" id="orderemail">
+                    <p>Link Google Drive</p>
+                    <input type="link" id="orderlink">
                     <p>Phone No</p>
                     <input type="number" id="orderphone">
                 </div>
                 <div class="block">
-                    <h3 align="center" class="nicefont">Pembayaran Via</h3>
-                    <input placeholder="Click to choose your Pembayaran Via..." value="Click to choose your Payment.." readonly onclick="showcakechooser()">
+                    <h3 align="center" class="nicefont">Design</h3>
+                    <input placeholder="Design..." value="Design.." readonly onclick="showcakechooser()">
                     
                 </div>
                 
-
+<!--GAK PKAE--
                 <div class="block">
                     <h3 align="center" class="nicefont">Pemesanan</h3>
                     <select id="deliverytime">
                         <option>Pemesanan 1</option>
                     </select>
                 </div>
-                <div class="block">
-                    <h3 align="center" class="nicefont">Payment Method</h3>
-                    <p>Cash on Delivery</p>
-                </div>
-                
+                <!--GAK PKAE-->
                 <div class="greenblock" onclick="ordernow()">
-                    <h3 align="center" class="nicefont">Order Now</h3>
+                    <h3 align="center" class="nicefont">Send Via WhatsApp</h3>
                 </div>
                 
             </div>
@@ -238,8 +241,8 @@
             }
             
             var products = [
-                "Dana",
-                "Ovo",                
+                "Website Design",
+                "UI/UX Design",                
             ]
             
             $("#cakebuttons").html(function(){
@@ -281,9 +284,9 @@
                 var orderdate = $("#currentdate").val()
                 var ordername = $("#ordername").val()
                 var orderemail = $("#orderemail").val()
+                var orderlink = $("#orderlink").val()
                 var orderphone = $("#orderphone").val()
                 var deliverydate = $("#datepicker").val()
-                var deliverytime = $("#deliverytime").val()
                 
                 //check if all input are filled
                 var notcomplete = false
@@ -310,8 +313,8 @@
                         %0A*Order date* : ${orderdate}
                         %0A*Name* : ${ordername}
                         %0A*Email* : ${orderemail}
+                        %0A*Link Drive* : ${orderlink}
                         %0A*Phone* : ${orderphone}
-                        %0A*Delivery Time* : ${deliverytime}
                         %0A*Pembayaran* : ${oi}`
                     }
                     else{
